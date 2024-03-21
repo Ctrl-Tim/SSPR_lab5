@@ -1,0 +1,33 @@
+version: '3.9'
+services:
+  service1:
+    container_name: service1_container
+    build: ./python-docker
+    ports:
+      - 9001:9001
+    volumes:
+      - ./service1:/app
+
+  service2:
+    container_name: service2_container
+    build: ./python-docker
+    ports:
+      - 9002:9002
+    volumes:
+      - ./service2:/app
+
+  service3:
+    container_name: service3_container
+    build: ./python-docker
+    ports:
+      - 9003:9003
+    volumes:
+      - ./service3:/app
+
+
+
+volumes:
+    flaskdb:
+      driver: local
+    pgadmin:
+      driver: local
